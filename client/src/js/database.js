@@ -1,4 +1,4 @@
-import { request } from 'express';
+// import { request } from 'express';
 import { openDB } from 'idb';
 
 const initdb = async () =>
@@ -13,7 +13,7 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
   const jateDb = await openDB('jate', 1);
 
@@ -21,14 +21,14 @@ export const putDb = async (content) => {
 
   const store = trx.objectStore('jate');
 
-  request = store.put({value: content});
+   const request = store.put({value: content});
 
   const res = await request;
 
   console.log('data saved to the database', res);
 }
 
-// TODO: Add logic for a method that gets all the content from the database
+// // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
   const jateDb = await openDB('jate', 1);
 
@@ -36,11 +36,12 @@ export const getDb = async () => {
 
   const store = trx.objectStore('jate');
   
-  request = store.getAll();
+  const request = store.getAll();
 
-  await request;
-  console.log('res.value', res);
-  return res;
+  // Get confirmation of the request.
+  const result = await request;
+  console.log('result.value', result);
+  return result;
 };
 
 initdb();

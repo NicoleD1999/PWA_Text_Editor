@@ -21,7 +21,7 @@ export const putDb = async (content) => {
 
   const store = trx.objectStore('jate');
 
-  request = store.put({id: 1, value: content});
+  request = store.put({value: content});
 
   const res = await request;
 

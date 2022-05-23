@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/License-MIT-blueviolet)
 
 ## Description
-In this application the user will be able to type whatever they would like into the body of the application. Each time the user presses enter a new line is created for them to write on. The users information will be saved so if the user refreshes they are able to come back and see that their previous work is still saved. The user also has the option to install the application to use it offline by clicking the install button
+In this application the user will be able to type whatever they would like into the body of the application. Each time the user presses enter a new line is created for them to write on. The users information will be saved so if the user refreshes they are able to come back and see that their previous work is still saved. The user also has the option to install the application to use it offline by clicking the install button.
 
 
 # Table of Contents

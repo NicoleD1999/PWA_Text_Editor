@@ -21,27 +21,27 @@ export const putDb = async (content) => {
 
   const store = trx.objectStore('jate');
 
-   const request = store.put({value: content});
+  const request = store.put({id: 1, value: content});
 
-  const res = await request;
+  const result = await request;
 
-  console.log('data saved to the database', res);
+  console.log('data saved to the database', result.value);
 }
 
 // // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
   const jateDb = await openDB('jate', 1);
 
-  const trx = jateDb.transaction('todos', 'readonly');
+  const trx = jateDb.transaction('jate', 'readonly');
 
   const store = trx.objectStore('jate');
   
-  const request = store.getAll();
+  const request = store.get(1);
 
   // Get confirmation of the request.
   const result = await request;
-  console.log('result.value', result);
-  return result;
+  console.log('result.value', result?.value);
+  return result?.value;
 };
 
 initdb();
